@@ -4,6 +4,7 @@ import Like from "./components/itemlistcontainer";
 import body from "./components/navbar.css"
 import Icon from "./components/CartWidget";
 import Button from "./components/button";
+import SumarAlCarrito from "./components/ItemCount";
 
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
         <Navbar />
         <Like />
         <Button id= "Boton" text = "TOCA AQUI" type="Submit"  />
-        
+   
+        <SumarAlCarrito/>
         
         </>
      
