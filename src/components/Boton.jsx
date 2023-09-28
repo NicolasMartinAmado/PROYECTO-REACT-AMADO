@@ -1,4 +1,7 @@
-const Button = (props) => {
+import { Children } from "react";
+import Useauth from "./hooks/LogIn";
+
+const Boton = (props) => {
 
 return (
     <button
@@ -9,9 +12,10 @@ return (
     value={props.value}
     disabled= {props.disabled}
     style={props.style}
+    
      >
-{props.text}
+
     </button>
 )
 }
-export default Button;
+export default Boton;
