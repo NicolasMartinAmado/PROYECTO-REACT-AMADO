@@ -10,7 +10,7 @@ import PageDetail from "./components/Pages/detail";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Useauth from "./components/hooks/LogIn";
 import Pageproductos from "./components/Pages/producto";
-import inicio from "./components/Pages/detail";
+import Pageinicio from "./components/Pages/inicio"
 
 
 
@@ -20,12 +20,13 @@ function App() {
     
         <BrowserRouter> 
         <Layout>
-        
+      
         <Useauth/>
       
         <Routes> 
-     <Route path="/" element={<PageDetail/>} />  
-     <Route path="/producto" element={<Pageproductos/>}  />    
+     <Route path="/" element={<Pageinicio/>} />  
+     <Route path="/producto" element={<Pageproductos/>}  />  
+     <Route path="/producto/:productoId" element={<PageDetail/>}  />    
         </Routes>
         </Layout>
         </BrowserRouter>

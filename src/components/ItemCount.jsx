@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import Icon from "./CartWidget";
+import Swal from "sweetalert2";
 
 
 
@@ -18,7 +19,31 @@ const SumarAlCarrito = () => {
     const Carrito = () => {
        
         if(Sumar <= 0) {
-            console.error("No agregaste ningun producto")} 
+            Swal.fire({ title: "No agregaste ningun producto" ,
+            icon: 'warning',
+            })}
+            else if(Carrito){
+                Swal.fire(
+                    {
+                        title: "Estas seguro de que quieres agregar " + Sumar + " producto/s al carrito?" ,
+                        icon: 'Success',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Si'
+                    }) .then((result) => {
+                            if (result.isConfirmed) {
+                                console.log("Producto agregado al carrito")
+                              Swal.fire(
+                                'Agregado al carrito',
+                                'Tu producto se agrego al carrito correctamente',
+                                'success'
+                              )
+                            }
+                        
+                      })
+                
+            }
             else { 
                  console.log("Usted a agregado al carrito " + Sumar +   " productos " )
                 }
@@ -27,7 +52,7 @@ const SumarAlCarrito = () => {
    
     return (
         <>
-            <div className="compra" style={{ display: "flex", justifyContent: "center", gap: 50, backgroundColor: "white", width: 400 }}>
+            <div style={{ display: "flex", justifyContent: "center", gap: 50, color:"black", backgroundColor:"white", width:"500px", marginLeft:"690px" }}>
                 <button style={{ fontSize: "50px" }} className="agr/rest" onClick={Sumar1}> + </button>
                 <h2 style={{ fontSize: "30px" }}>{Sumar}</h2>
                 <button style={{ fontSize: "30px" }} onClick={Restar1}> - </button>
