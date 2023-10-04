@@ -52,14 +52,11 @@ const SumarAlCarrito = () => {
    
     return (
         <>
-            <div style={{ display: "flex", justifyContent: "center", gap: 50, color:"black", backgroundColor:"white", width:"500px", marginLeft:"690px" }}>
+            <div style={{ display: "flex", justifyContent: "center", gap: 50, color:"black", backgroundColor:"white" }}>
                 <button style={{ fontSize: "50px" }} className="agr/rest" onClick={Sumar1}> + </button>
                 <h2 style={{ fontSize: "30px" }}>{Sumar}</h2>
                 <button style={{ fontSize: "30px" }} onClick={Restar1}> - </button>
-                <button style={{ fontSize: "30px" }} onClick={Carrito}> Sumar Al Carrito
-
-                </button>
-               
+                <button style={{ fontSize: "30px" }} onClick={Carrito}> Sumar Al Carrito </button>
             </div>
         </>
     )

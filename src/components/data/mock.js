@@ -1,12 +1,12 @@
 import { useEffect } from "react";
-import products from "./producto";
+import camisetas from "./producto";
 
 function Mock() {
     useEffect(() => {
       function obtenerProductos() {
         return new Promise((resolve, reject) => {
           setTimeout(() => {
-            resolve({products});
+            resolve({camisetas});
           }, 3000); 
         });
       }

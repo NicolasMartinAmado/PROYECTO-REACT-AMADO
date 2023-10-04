@@ -17,12 +17,9 @@ import Pageinicio from "./components/Pages/inicio"
 function App() {
   return (  
         <>
-    
         <BrowserRouter> 
         <Layout>
-      
         <Useauth/>
-      
         <Routes> 
      <Route path="/" element={<Pageinicio/>} />  
      <Route path="/producto" element={<Pageproductos/>}  />  
@@ -30,10 +27,7 @@ function App() {
         </Routes>
         </Layout>
         </BrowserRouter>
-        
-        </>
-     
-    
+        </> 
   );
 
 }
