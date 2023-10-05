@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import Icon from "./CartWidget";
-import LogIn from "./hooks/LogIn";
+
 
 function Navbar() {
 

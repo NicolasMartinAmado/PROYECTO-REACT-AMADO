@@ -1,14 +1,6 @@
-
-import { Button } from "bootstrap";
 import SumarAlCarrito from "../ItemCount"
-import Like from "../itemlistcontainer"
-import Boton from "../Boton";
-import Mock from "../data/mock";
 import { useEffect, useState } from "react";
-import products from "../data/producto";
 import { useParams } from "react-router-dom";
-import Swal from "sweetalert2";
-import Pageinicio from "./inicio"
 
 const PageDetail = () => {
 

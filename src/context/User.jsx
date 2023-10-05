@@ -2,7 +2,7 @@ import { createContext, useContext, useState } from "react";
 
 export const UserContext = createContext()
 
-export const [User, setuser] = useState([40])
+export const [User, setuser] = useState()
 
 export const userprovider = (children) => {
     const [saludo, setsaludo] = useState("Hola")

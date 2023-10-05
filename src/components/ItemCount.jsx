@@ -6,8 +6,6 @@ import Swal from "sweetalert2";
 
 const SumarAlCarrito = () => {
 
- 
-
     const [Sumar, setsumar] = useState(0)
 
     const Sumar1 = () => {
@@ -49,7 +47,6 @@ const SumarAlCarrito = () => {
                 }
             }
    
-   
     return (
         <>
             <div style={{ display: "flex", justifyContent: "center", gap: 50, color:"black", backgroundColor:"white" }}>
@@ -59,7 +56,6 @@ const SumarAlCarrito = () => {
                 <button style={{ fontSize: "30px" }} onClick={Carrito}> Sumar Al Carrito </button>
             </div>
         </>
-    )
-    
+    )   
     }
 export default SumarAlCarrito
