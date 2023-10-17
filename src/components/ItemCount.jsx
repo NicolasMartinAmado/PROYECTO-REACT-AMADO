@@ -1,21 +1,24 @@
-import { useCallback, useEffect, useState } from "react";
-import Icon from "./CartWidget";
+import { useCallback, useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import { CartContext } from "../context/cartcontext";
+import { chango } from "./CartWidget";
 
 
 
 const SumarAlCarrito = () => {
-
-    const [Sumar, setsumar] = useState(0)
+    const micontext = useContext(CartContext)
+    const [Sumar, setsumar] = useState(0) 
 
     const Sumar1 = () => {
         setsumar(Sumar + 1)
     }
     const Restar1 = () => {
         setsumar(Sumar - 1)
+        
     }
+
     const Carrito = () => {
-       
+     
         if(Sumar <= 0) {
             Swal.fire({ title: "No agregaste ningun producto" ,
             icon: 'warning',
@@ -41,7 +44,7 @@ const SumarAlCarrito = () => {
                         
                       })
                 
-            }
+            } 
             else { 
                  console.log("Usted a agregado al carrito " + Sumar +   " productos " )
                 }
@@ -49,12 +52,15 @@ const SumarAlCarrito = () => {
    
     return (
         <>
+
             <div style={{ display: "flex", justifyContent: "center", gap: 50, color:"black", backgroundColor:"white" }}>
                 <button style={{ fontSize: "50px" }} className="agr/rest" onClick={Sumar1}> + </button>
                 <h2 style={{ fontSize: "30px" }}>{Sumar}</h2>
                 <button style={{ fontSize: "30px" }} onClick={Restar1}> - </button>
                 <button style={{ fontSize: "30px" }} onClick={Carrito}> Sumar Al Carrito </button>
+        <button onClick={()=> micontext.setcartList(chango + 1)}>AGRE</button>
             </div>
+
         </>
     )   
     }

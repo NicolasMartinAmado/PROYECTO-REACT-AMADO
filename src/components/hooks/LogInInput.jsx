@@ -1,6 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import "./log.css"
+import Loading from "../spinner";
+import { NavLink } from "react-router-dom";
+import Pageproductos from "../Pages/producto";
+import PageContacto from "../Pages/contact";
+
+
 
 
 const LoginInput = () => {
@@ -29,20 +35,34 @@ const LoginInput = () => {
     }
 
     const Auth = () => {
-        const FoundUs = users.find((x) =>
+     const FoundUs = users.find((x) =>
             x.nombre === user && x.contraseña === password
         )
-        FoundUs ? Swal.fire({
-            title: 'Bienvenido ' + ` ${user}`,
-            icon: 'success'
-        }) : Swal.fire({
-            title: `DATOS INGRESADOS INCORRECTOS`,
-            icon: 'error'
-        })
+       return ( 
+        <><div> {FoundUs ? (Swal.fire({
+               title: 'Bienvenido ' + ` ${user}`,
+               icon: 'success',
+              footer: `<a href="/producto">VE A LA TIENDA</a> `
+           })
+           )
+               : Swal.fire({
+                   title: `DATOS INGRESADOS INCORRECTOS`,
+                   icon: 'error',
+                   footer: `<a href="/contacto">SI NO TENES UNA CUENTA CREADA, PORFAVOR REGISTRESE AQUI</a> ` 
+               }
+
+               )}
+           </div>
+
+               </>
+       )
     }
+ 
+
     const Logout = () => {
         setuser(false)
     }
+    
     
     const SignUp = (nombre, mail, telefono, fechanacimiento, contraseña) => {
         
@@ -61,13 +81,15 @@ const LoginInput = () => {
         console.log("Cambiando password", {Lastpassword, Newpassword})
     }
     return (
-        <>
+        <> 
+
         <div className="inp input-inicio-iniciarsesion"> <input type="text" placeholder="Ingrese su nombre de usuario" value={user} onChange={userHandleChange} />
             <input type="text" placeholder="Ingrese su mail" value={email} onChange={emailHandlechange} />
             <input type="password" placeholder="Ingrese su contraseña" value={password} onChange={passwordHandleChange} />
-            <button className="bt" type="submit" onClick={Auth}> iniciar sesion </button>
+            <button className="bt" type="submit" onClick={Auth} > iniciar sesion  </button>
             </div>
             
+
         </>
 
     )
