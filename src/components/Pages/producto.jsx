@@ -1,3 +1,4 @@
+import Layout from "../layout";
 
 
 
@@ -6,7 +7,7 @@
 const Pageproductos = () => {
 
   return (
-
+<Layout>
     <main>
       <h1 style={{ color: "white", textAlign: "center", padding: 80 }}>PRODUCTOS</h1>
       <section style={{ display: "flex", justifyContent: "center" }} className="PageProductos-ImagenCamisetas">
@@ -30,7 +31,7 @@ const Pageproductos = () => {
 
 
     </main>
-
+    </Layout>
   )
 }
 export default Pageproductos;

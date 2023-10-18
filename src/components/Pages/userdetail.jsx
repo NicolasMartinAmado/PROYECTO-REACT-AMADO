@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { UserServices } from "../../services/user";
 
 const Userdetail = () => {
-    const [user, setuser] = useState("")
+    const [user, setuser] = useState()
 useEffect(()=> {
-    UserServices.GetUser().then(data=> setuser(data))
+    UserServices.GetUser("VpDzmyYuBry7PS5fTKuU").then(data=> setuser(data))
 },[])
 
 

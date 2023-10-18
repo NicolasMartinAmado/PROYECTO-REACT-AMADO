@@ -1,42 +1,16 @@
 import Userdetail from "./userdetail";
 import "./contact.css"
+import Layout from "../layout";
+import { UserServices } from "../../services/user";
+import Adduserform from "./Adduserform";
 const PageContacto = ()=> {
 
 
     return (
       <> 
-      
-       <form id="form" action="">
-       <h2 className="ttl">REGISTRESE COMPLETANDO LOS DATOS</h2>
-        <div className="nam">
-            <label >Nombre</label>
-           
-            <input className="nombre" type="text" />
-        </div>
-        <div className="apellidos">
-            <label >Apellido</label>
-         
-           <input className="apellido" type="text" />
-        </div>
-        <div className="emails">
-            <label  >E-mail</label>
-          
-          <input className="email" type="text" />
-        </div>
-        <div className="tarjetas">
-            <label  for="Tarjeta">Tarjeta de Debito/Credito</label>
-          
-           <input className="tarjeta" type="text" />
-          
-            <label  for="COD">Codigo de Seguridad</label>
-           <input type="text" />
-           
-      </div>
-      <div>
-        <input type="submit" name="Registrarme" id="regi" value="Registrarme" />
-      </div>
-       
-        </form>
+      <Layout> 
+    <Adduserform/>
+    
 
 
 <h3 className="titulo_ayuda">AYUDA</h3>
@@ -58,6 +32,8 @@ const PageContacto = ()=> {
     <a href="">Wpp: +54 9 1152364587</a>
     <a href="">Email: Afaasesora@yahoo.com.ar</a>
 </section>
+
+</Layout>
 </>
 
     )

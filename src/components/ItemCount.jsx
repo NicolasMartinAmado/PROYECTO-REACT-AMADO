@@ -2,28 +2,37 @@ import { useCallback, useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { CartContext } from "../context/cartcontext";
 import { chango } from "./CartWidget";
+import { limit } from "firebase/firestore";
 
 
 
 const SumarAlCarrito = () => {
-    const micontext = useContext(CartContext)
-    const [Sumar, setsumar] = useState(0) 
+    
+    const [Sumar, setsumar] = useState(0)
+    
 
     const Sumar1 = () => {
         setsumar(Sumar + 1)
     }
     const Restar1 = () => {
-        setsumar(Sumar - 1)
+        if (Sumar > 0){
+        setsumar(Sumar - 1)}
         
     }
 
     const Carrito = () => {
-     
+
+      
         if(Sumar <= 0) {
             Swal.fire({ title: "No agregaste ningun producto" ,
             icon: 'warning',
             })}
             else if(Carrito){
+              
+                 
+            
+                    
+                
                 Swal.fire(
                     {
                         title: "Estas seguro de que quieres agregar " + Sumar + " producto/s al carrito?" ,
@@ -43,6 +52,7 @@ const SumarAlCarrito = () => {
                             }
                         
                       })
+                     
                 
             } 
             else { 
@@ -58,7 +68,8 @@ const SumarAlCarrito = () => {
                 <h2 style={{ fontSize: "30px" }}>{Sumar}</h2>
                 <button style={{ fontSize: "30px" }} onClick={Restar1}> - </button>
                 <button style={{ fontSize: "30px" }} onClick={Carrito}> Sumar Al Carrito </button>
-        <button onClick={()=> micontext.setcartList(chango + 1)}>AGRE</button>
+               
+       
             </div>
 
         </>

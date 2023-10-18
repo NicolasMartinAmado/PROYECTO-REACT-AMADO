@@ -18,6 +18,7 @@ import Userdetail from "./components/Pages/userdetail";
 import PageContacto from "./components/Pages/contact";
 import { Cartcontextprovider, Cartprovider, UserContext } from "./context/cartcontext";
 import { useState } from "react";
+import Cartitem from "./components/CartItem";
 
 
 function App() {
@@ -29,15 +30,16 @@ function App() {
           
       <Cartcontextprovider>
         <BrowserRouter> 
-        <Layout>
+     
         <Routes> 
      <Route path="/" element={<Pageinicio/>}  />  
      <Route path="/producto" element={<Pageproductos/>}  />  
      <Route path="/contacto" element={<PageContacto/>}  />
      <Route path="/producto/:productoId" element={<PageDetail/>}  />   
-     <Route path="/detail/:productoId" element={<PageDetail/>}  /> 
+     <Route path="/detail/:productoId" element={<PageDetail/>}   />  
+     <Route path="/cartitem" element={<Cartitem/>}/>   
         </Routes>
-        </Layout>
+     
         </BrowserRouter>
         </Cartcontextprovider>
         </> 
