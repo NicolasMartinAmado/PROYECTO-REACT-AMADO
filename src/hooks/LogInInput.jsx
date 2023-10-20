@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import "./log.css"
-import Loading from "../spinner";
+
 import { NavLink } from "react-router-dom";
-import Pageproductos from "../Pages/producto";
-import PageContacto from "../Pages/contact";
+
+
 
 
 

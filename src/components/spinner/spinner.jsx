@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import LoginInput from './hooks/LogInInput';
+
 import BasicExample from './sp';
-import SizesExample from './sp';
+import LoginInput from '../../hooks/LogInInput';
 
 function Loading() {
     const [isloading, setloading] = useState(true)
@@ -20,7 +20,7 @@ function Loading() {
                   <BasicExample />
 
               ) :
-              (<LoginInput />)}
+              (<LoginInput/>)}
       </div>
  
      </>

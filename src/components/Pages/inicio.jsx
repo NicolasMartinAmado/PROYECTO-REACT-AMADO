@@ -1,13 +1,11 @@
-import PageDetail from "./detail";
-import SumarAlCarrito from "../ItemCount";
-import Mock from "../data/mock";
-import { useState } from "react";
-import LoginInput from "../hooks/LogInInput";
-import Loading from "../spinner";
+
+
+import Loading from "../spinner/spinner";
 import { UserServices } from "../../services/user";
 
 import Userdetail from "./userdetail";
-import Layout from "../layout";
+import Layout from "../layout/layout";
+import Mock from "../../data/mock";
 
 const inicio = () => {
 
@@ -20,7 +18,7 @@ const inicio = () => {
 
 <Loading/>
      
-      <Mock />
+     
 
     </>
     </Layout>

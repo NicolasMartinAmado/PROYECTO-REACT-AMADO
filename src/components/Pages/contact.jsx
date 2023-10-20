@@ -1,8 +1,11 @@
 import Userdetail from "./userdetail";
-import "./contact.css"
-import Layout from "../layout";
+import "../css/contact.css"
+import Layout from "../layout/layout";
 import { UserServices } from "../../services/user";
 import Adduserform from "./Adduserform";
+
+
+
 const PageContacto = ()=> {
 
 

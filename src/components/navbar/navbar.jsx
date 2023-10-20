@@ -1,12 +1,14 @@
 import { NavLink } from "react-router-dom";
 import Icon from "./CartWidget";
-
+import "../css/navbar.css"
+import CartWidget from "./CartWidget";
 
 function Navbar() {
 
     return (
         <body >
-            <> <Icon />
+            <> 
+            <NavLink to="/cart"> <CartWidget/> </NavLink>
                 <header style={{ display: "flex", justifyContent: "center" }}>
                     <li className="lista" style={{ display: "flex", justifyContent: "center", gap: 150, fontSize: 20, borderBottom: "5px solid black" }}>
                         <li>  <NavLink to="/" style={{ color: "white", fontWeight: "bolder" }} > INICIO </NavLink> </li>

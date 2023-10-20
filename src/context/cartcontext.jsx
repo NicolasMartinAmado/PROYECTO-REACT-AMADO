@@ -1,35 +1,39 @@
 import { createContext, useState } from "react";
-import { oa } from "../components/CartWidget";
 
 
 
-
-
-
-export const CartContext = createContext()
+export const CartContext = createContext( )
 
 
 
 export const Cartcontextprovider = ({children})=> {
 
- const [cartList, setcartList]= useState([])
+ const [cartList, setcartList]= useState([0])
+
 
 const addToCart = (item, qty) => {
-    setcartList(cartList + 1)
-    return <div> {item + qty} </div>
+   
+  setcartList(...item, qty)
+
 
 }
-const removeList = () => {
-    setcartList(false)
 
-}
-const deleteItem = () => {
-setcartList(false)
+const clear = () => {
+setcartList([])
 }
 
+const isInCart = (id) =>{
+return cartList.some((item)=> item.id=== id)
+}
+const cartQuantity = ()=> {
+  return cartList.reduce((acc, item)=> acc + item.qty)
+}
+const deleteItem = (id)=>{
+  setcartList(cartList.filter((item)=> item.id !== id))
+}
 return (
 
-  <CartContext.Provider value={{cartList, setcartList, removeList, deleteItem, addToCart}}>
+  <CartContext.Provider value={{cartList, addToCart, isInCart, deleteItem, cartQuantity, clear}}>
 {children}
   </CartContext.Provider>
 )
