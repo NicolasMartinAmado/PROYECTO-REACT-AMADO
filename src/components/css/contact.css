@@ -55,14 +55,23 @@
     display: flex;
     justify-content: center;
 }
-.tarjetas{
+.password{
     padding: 30px;
     color: white;
     font-weight: bolder;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.phone{
+    padding: 30px;
+    color: white;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .titulo_ayuda{
     font-size: 26px;

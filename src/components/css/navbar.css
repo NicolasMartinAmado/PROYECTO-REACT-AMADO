@@ -3,7 +3,7 @@
 body {
    
     min-height: 100%;
-    background-image: url("../img/fff.jpg");
+    background-image: url("/src/assets/img/fff.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -20,4 +20,29 @@ footer {
     text-align: center;
     margin: 0;
     padding: 0;
+}
+
+#cartitem{
+   display: flex;
+   flex-direction: column;
+   justify-content:center ;
+   gap: 30px;
+   border-bottom: 2px solid white;
+   align-self: center;
+   align-content: center;
+   justify-content: center;
+   align-items: center;
+  & .detalle{
+    display: flex;
+    justify-content: center;
+  }
+    & img{
+        width: 200px;
+        height: 150px;
+        display: flex; 
+        align-self: center;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
 }

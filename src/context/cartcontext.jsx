@@ -1,42 +1,54 @@
 import { createContext, useState } from "react";
+import { Producto } from "../data/producto";
 
 
+export const CartContext = createContext(null)
 
-export const CartContext = createContext( )
+export const Cartcontextprovider = ({ children }) => {
 
+  const DefaultCart = () => {
+    let cart = {}
+    for (let i = 1; i < Producto.length + 1; i++) {
+      cart[i] = 0
+    }
+    return cart
+  }
 
+  const [cartList, setcartList] = useState(DefaultCart())
 
-export const Cartcontextprovider = ({children})=> {
+  const addToCart = (itemId) => {
+    setcartList((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }))
 
- const [cartList, setcartList]= useState([0])
+  }
 
+  const Isincart = (Id) => {
+    return cartList.some((itemId) => itemId.Id === Id)
+  }
 
-const addToCart = (item, qty) => {
-   
-  setcartList(...item, qty)
+  const deleteItem = (itemId) => {
+    setcartList((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }))
+  }
 
+  const totalammount = () => {
+    let total = 0
+    for (const itemId in cartList) {
+      if (cartList[itemId] > 0) {
+        let info = Producto.find((product) => product.Id === Number(itemId));
+        total += cartList[itemId] * info.Precio
+      }
 
-}
+    }
+    return total
+  }
+  const contextvalue = { cartList, addToCart, deleteItem, Isincart, totalammount }
 
-const clear = () => {
-setcartList([])
-}
+  console.log(cartList)
 
-const isInCart = (id) =>{
-return cartList.some((item)=> item.id=== id)
-}
-const cartQuantity = ()=> {
-  return cartList.reduce((acc, item)=> acc + item.qty)
-}
-const deleteItem = (id)=>{
-  setcartList(cartList.filter((item)=> item.id !== id))
-}
-return (
-
-  <CartContext.Provider value={{cartList, addToCart, isInCart, deleteItem, cartQuantity, clear}}>
-{children}
-  </CartContext.Provider>
-)
+  return (
+    <CartContext.Provider value={contextvalue}>
+      {children}
+    </CartContext.Provider>
+  )
 
 }
 

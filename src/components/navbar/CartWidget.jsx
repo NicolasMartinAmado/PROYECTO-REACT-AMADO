@@ -1,18 +1,24 @@
-import { Children, useContext, useState } from "react"
-import SumarAlCarrito from "../itemDetailContainer/ItemCount";
-import { UserContext, Cartprovider, CartContext } from "../../context/cartcontext";
+import { useContext, useState } from "react"
+import { CartContext } from "../../context/cartcontext";
 import {BsCart4} from "react-icons/bs"
 import { Badge } from "react-bootstrap";
 
 
 
 function CartWidget() {
+  const {}= useContext(CartContext)
+  const [quantityAdded, setQuantityadded] = useState(``)
 
-const {cartQuantity} = useContext(CartContext)
+
+  const onAdd = (cantidad) =>{
+      console.log(`compraste ${cantidad} de productos`)
+  setQuantityadded(cantidad)
+  
+  }
 
   return (<><div style={{ color: "white" }}>
    <BsCart4 color="white" fontSize={"40px"}/> 
-     {cartQuantity() > 0 &&  <Badge bg="danger">{cartQuantity()}</Badge>}
+   <Badge bg="danger" ></Badge>
   </div>
 
   </>

@@ -1,0 +1,22 @@
+.imgproducts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+    align-items: center;
+    align-content: center;
+    
+}
+.product{
+    display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   place-items: center;
+   align-items: center;
+   align-content: center;
+   gap: 80px;
+}
+.descrip{
+    text-align: center;
+    background-color: white;
+    
+}

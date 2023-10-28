@@ -1,4 +1,4 @@
-import PageDetail from "../Pages/detail";
+
 import Footer from "./footer";
 import Header from "./header";
 

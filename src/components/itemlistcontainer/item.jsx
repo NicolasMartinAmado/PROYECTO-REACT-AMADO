@@ -1,12 +1,36 @@
-import { Item } from "./itemlist"
+import "../css/prod.css"
+import { CartContext } from "../../context/cartcontext"
+import { useContext } from "react"
 
-export const Item1 = () => {
-<Item 
-id = "456"
-precio = "35000"
-img = {"https://assets.adidas.com/images/w_600,f_auto,q_auto/d88ae2138faf49be8f74aeca012c62eb_9366/Camiseta_Titular_Argentina_22_Messi_Blanco_HL8425_01_laydown.jpg"}
-descripcion = "Seleccion argentina 2022"
-title = "Camisetas"
-/>
+const Item = (props) => {
+    const { Id, Description, img, Precio} = props.data
 
+    const {addToCart, cartList}= useContext(CartContext)
+
+
+
+    return (
+ 
+       
+
+   
+        <><div>
+            <div className="imgproducts">  <img id={Id} style={{ width: "380px", height: "400px", objectFit: "cover" }} src={img} /> </div>
+            <div className="descrip">
+                <div>{Description}</div>
+                <p>${Precio}</p>
+              
+
+                <button onClick={() => addToCart(Id)}>Add to Cart </button>
+            </div>
+        </div><>
+   
+
+                </></>
+
+
+    )
+   
 }
+
+export default Item
