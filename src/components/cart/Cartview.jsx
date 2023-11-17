@@ -3,6 +3,7 @@ import { CartContext } from "../../context/cartcontext";
 import Cartitem from "../cartitem/cartItem";
 import { Producto } from "../../data/producto";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const Cartview = () => {
   const { cartList, totalammount } = useContext(CartContext);
@@ -119,6 +120,8 @@ const Cartview = () => {
           </>
         )}
       </div>{" "}
+      <Link to={`/producto`}><button> Seguir comprando</button> </Link>
+      
     </>
   );
 };

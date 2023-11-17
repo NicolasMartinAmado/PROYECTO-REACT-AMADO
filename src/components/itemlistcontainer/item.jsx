@@ -37,6 +37,7 @@ const Item = (props) => {
           <p>${Precio}</p>
 
           {verMasButton(Id)}
+          <button onClick={() => addToCart(Id)}> Añadir al carrito </button>
         </div>
       </div>
       <></>

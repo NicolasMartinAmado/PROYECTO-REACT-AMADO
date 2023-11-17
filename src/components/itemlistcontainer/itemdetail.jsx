@@ -32,23 +32,7 @@ const ProductoDetails = () => {
           </div>
           <div className="comp">
             {" "}
-            <button onClick={() => addToCart(id)}>
-              {" "}
-              <button
-                onClick={() => {
-                  Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "Producto agregado al carrito con exito",
-                    showConfirmButton: false,
-                    timer: 1500,
-                  });
-                }}
-              >
-                {" "}
-                Agregar al carrito{" "}
-              </button>
-            </button>
+            <button onClick={() => addToCart(id)}> Añadir al carrito </button>
           </div>
         </div>
       </div>

@@ -24,25 +24,6 @@ const Cartitem = (props) => {
         </div>
       </div>
 
-      <a
-        style={{
-          alignItems: "center",
-          alignContent: "center",
-          alignSelf: "center",
-        }}
-        href="/producto"
-      >
-        <button
-          style={{
-            width: "150px",
-            alignItems: "center",
-            alignContent: "center",
-            alignSelf: "center",
-          }}
-        >
-          Seguir comprando
-        </button>
-      </a>
     </>
   );
 };
