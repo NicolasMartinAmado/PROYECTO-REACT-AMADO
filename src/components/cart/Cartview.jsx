@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
 const Cartview = () => {
-  const { cartList, totalammount } = useContext(CartContext);
+  const { cartList, totalammount, clear } = useContext(CartContext);
   const total = totalammount();
 
   return (
@@ -117,10 +117,16 @@ const Cartview = () => {
                 Finalizar compra
               </button>{" "}
             </div>
+            <div style={{display:"flex", gap:1600}}>  <button style={{backgroundColor:"red", cursor:"pointer", color:"white", fontWeight:"bolder"}}  onClick={()=> clear()}>VACIAR CARRITO</button>
+            <Link to={`/producto`}><button style={{backgroundColor:"blue",color:"white", cursor:"pointer", fontWeight:"bolder"}}> Seguir comprando</button> </Link> </div>
+          
           </>
         )}
       </div>{" "}
-      <Link to={`/producto`}><button> Seguir comprando</button> </Link>
+      
+
+      
+      
       
     </>
   );

@@ -15,16 +15,22 @@ export const Cartcontextprovider = ({ children }) => {
 
   const [cartList, setcartList] = useState(DefaultCart());
 
-  const addToCart = (itemId) => {
-    setcartList((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
+  const addToCart = (itemId, quantity) => {
+    quantity = 1
+    setcartList((prev) => ({ ...prev, [itemId]: prev[itemId] + quantity }));
   };
 
   const Isincart = (Id) => {
     return cartList.some((itemId) => itemId.Id === Id);
   };
 
-  const deleteItem = (itemId) => {
-    setcartList((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+  const clear = () => {
+    setcartList([])
+  }
+
+  const deleteItem = (itemId, quantity) => {
+    quantity=1
+    setcartList((prev) => ({ ...prev, [itemId]: prev[itemId] - quantity }));
   };
 
   const totalammount = () => {
@@ -43,6 +49,7 @@ export const Cartcontextprovider = ({ children }) => {
     deleteItem,
     Isincart,
     totalammount,
+    clear
   };
 
   console.log(cartList);
