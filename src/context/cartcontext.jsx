@@ -1,10 +1,14 @@
-import { createContext, useState } from "react";
+import { createContext, useReducer, useState } from "react";
 import { Producto } from "../data/producto";
+import React from "react";
 import Swal from "sweetalert2";
 
 export const CartContext = createContext(null);
 
 export const Cartcontextprovider = ({ children }) => {
+
+  
+
   const DefaultCart = () => {
     let cart = {};
     for (let i = 1; i < Producto.length + 1; i++) {
@@ -15,10 +19,13 @@ export const Cartcontextprovider = ({ children }) => {
 
   const [cartList, setcartList] = useState(DefaultCart());
 
-  const addToCart = (itemId, quantity) => {
-    quantity = 1
-    setcartList((prev) => ({ ...prev, [itemId]: prev[itemId] + quantity }));
+  const addToCart = (itemId) => {
+   
+    setcartList((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
+    
+    
   };
+
 
   const Isincart = (Id) => {
     return cartList.some((itemId) => itemId.Id === Id);
@@ -28,9 +35,11 @@ export const Cartcontextprovider = ({ children }) => {
     setcartList([])
   }
 
-  const deleteItem = (itemId, quantity) => {
-    quantity=1
-    setcartList((prev) => ({ ...prev, [itemId]: prev[itemId] - quantity }));
+
+
+  const deleteItem = (itemId) => {
+    
+    setcartList((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
   };
 
   const totalammount = () => {

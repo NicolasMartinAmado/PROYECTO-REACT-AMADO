@@ -99,6 +99,7 @@ const Cartview = () => {
               }}
             >
               {" "}
+             
               <button
                 onClick={() => {
                   Swal.fire({
@@ -114,7 +115,8 @@ const Cartview = () => {
                   alignSelf: "center",
                 }}
               >
-                Finalizar compra
+                <Link to={`/checkout`}> Finalizar compra </Link> 
+               
               </button>{" "}
             </div>
             <div style={{display:"flex", gap:1600}}>  <button style={{backgroundColor:"red", cursor:"pointer", color:"white", fontWeight:"bolder"}}  onClick={()=> clear()}>VACIAR CARRITO</button>

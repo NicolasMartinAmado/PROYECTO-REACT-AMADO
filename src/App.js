@@ -4,13 +4,12 @@ import Pageinicio from "./components/Pages/inicio";
 import PageContacto from "./components/Pages/contact";
 import { Cartcontextprovider } from "./context/cartcontext";
 import Cartview from "./components/cart/Cartview";
-import Item from "./components/itemlistcontainer/item";
-
 
 import ProductoDetails from "./components/itemlistcontainer/itemdetail";
 import Checkout from "./components/checkout/checkout";
 
 function App() {
+ 
   return (
     <>
       <Cartcontextprovider>
@@ -21,7 +20,7 @@ function App() {
             <Route path="/producto/:id" element={<ProductoDetails />} />
             <Route path="/contacto" element={<PageContacto />} />
             <Route path="/cart" element={<Cartview />} />
-            <Route path="/Checkout" element={<Checkout />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
         </BrowserRouter>
       </Cartcontextprovider>

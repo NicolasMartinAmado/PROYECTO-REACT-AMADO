@@ -4,19 +4,14 @@ import { BsCart4 } from "react-icons/bs";
 import { Badge } from "react-bootstrap";
 
 function CartWidget() {
-  const {} = useContext(CartContext);
-  const [quantityAdded, setQuantityadded] = useState(``);
+  
 
-  const onAdd = (cantidad) => {
-    console.log(`compraste ${cantidad} de productos`);
-    setQuantityadded(cantidad);
-  };
 
   return (
     <>
       <div style={{ color: "white" }}>
-        <BsCart4 color="white" fontSize={"40px"} />
-        <Badge bg="danger"></Badge>
+        <BsCart4 color="white" bg="danger" fontSize={"40px"} />
+        <Badge bg="danger">0</Badge>
       </div>
     </>
   );
