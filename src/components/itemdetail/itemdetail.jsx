@@ -2,11 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../context/cartcontext";
 import { Producto } from "../../data/producto";
 import { Link, NavLink, useParams } from "react-router-dom";
-import Item from "./item";
-import css from "../css/prod.css";
 import CartWidget from "../navbar/CartWidget";
-import Swal from "sweetalert2";
-import ItemCount from "../../itemcount/itemcount";
+import ItemCount from "./itemquantityselector/itemquantityselector";
+
 
 const ProductoDetails = () => {
   const { addToCart, cartList, deleteItem } = useContext(CartContext);
@@ -20,6 +18,7 @@ const ProductoDetails = () => {
       <NavLink to="/cart">
         <CartWidget />
       </NavLink>
+      
       <h1 style={{ textAlign: "center", color: "white" }}>
         DETALLE DE PRODUCTO
       </h1>

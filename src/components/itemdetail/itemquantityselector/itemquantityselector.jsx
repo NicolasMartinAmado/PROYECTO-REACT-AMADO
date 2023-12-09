@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const ItemCount = () => {
 
-    const [count, setcount] = useState(0)
+    const [count, setcount] = useState(1)
 
   const handleAdd = () => {
   setcount(count + 1)

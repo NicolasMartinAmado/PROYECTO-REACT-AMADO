@@ -2,6 +2,7 @@ import { createContext, useReducer, useState } from "react";
 import { Producto } from "../data/producto";
 import React from "react";
 import Swal from "sweetalert2";
+import { createOrder } from "../api/order";
 
 export const CartContext = createContext(null);
 
@@ -52,13 +53,28 @@ export const Cartcontextprovider = ({ children }) => {
     }
     return total;
   };
+
+  async function finishPurchase() {
+    const orderData = {
+      items: cartList.map(({ item, quantity }) => ({ id: item.id, quantity, price: item.price })),
+      total: totalammount(),
+      date: new Date(),
+    };
+    const orderId = await createOrder(orderData);
+    console.log(`Order with ID ${orderId} created!`, { autoClose: 10000 });
+    const newCart = [];
+    setcartList(newCart);
+  }
+
+
   const contextvalue = {
     cartList,
     addToCart,
     deleteItem,
     Isincart,
     totalammount,
-    clear
+    clear,
+    finishPurchase
   };
 
   console.log(cartList);

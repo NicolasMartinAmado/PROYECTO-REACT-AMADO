@@ -5,8 +5,7 @@ import { Producto } from "../../data/producto";
 import imagenes from "../../assets/img/imagenes";
 
 import { Link, NavLink, useParams } from "react-router-dom";
-import ProductoDetails from "./itemdetail";
-import Swal from "sweetalert2";
+
 
 const Item = (props) => {
   const { Id, Description, img, Precio } = props.data;
